@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :birds
+  
   namespace :api do
     namespace :v1 do
         resources :users
+        resources :birds
     end
   end
 
