@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
 import { thunk } from 'react-thunk'
-import userReducer from './reducers/userReducer'
-import birdReducer from './reducers/birdReducer'
-import currentUserReducer from './reducers/currentUserReducer'
+import combineReducers from './reducers/index'
 
-const reducer = combineReducers({user:userReducer, bird:birdReducer, current:currentUserReducer})
-const store = createStore(reducer, applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const reducer = combineReducers
+
+const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
 
 
 
