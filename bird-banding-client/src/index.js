@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore, applyMiddleware} from 'redux'
+import { createStore, compose, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
-import { thunk } from 'react-thunk'
+import thunk  from 'redux-thunk'
 import combineReducers from './reducers/index'
 
 const reducer = combineReducers
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
+const store = createStore(
+  reducer,
+  composeEnhancer(applyMiddleware(thunk)),
+);
 
+//workaround pulled from stack overflow, because kept getting error, createStore would not take 3 argument)
 
 
 ReactDOM.render(<Provider store= {store} > <App /> </Provider>, document.getElementById('root'));
