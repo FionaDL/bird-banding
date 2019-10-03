@@ -1,10 +1,13 @@
-import React, { componenet } from 'react'
-import login from '../components/userComponents/login'
+import React, { Component } from 'react';
+import Login from '../components/userComponents/Login'
 
 class UserContainer extends Component {
+  
   render() {
      return (
-       <div><login/>Hi</div>
+       <div><Login/></div>
      )
   }
 }
+
+export default UserContainer

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import UserContainer from "./containers/UserContainer"
+import BirdContainer from "./containers/BirdContainer"
 
 class App extends Component  {
 
@@ -14,8 +15,8 @@ class App extends Component  {
 render(){
   return (
     <div>
-      <userContainer />
-      <birdContainer />
+      <UserContainer />
+      <BirdContainer />
     </div>
   );
 }

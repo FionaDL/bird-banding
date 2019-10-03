@@ -1,6 +1,6 @@
 const setCurrentUser = user => {
   return {
-    type: SET_CURRENT_USER,
+    type: "SET_CURRENT_USER",
     user: user
   }
 }
@@ -10,6 +10,7 @@ const setCurrentUser = user => {
 
 //asynchronous action creators
 export const login = credentials => {
+  console.log(credentials)
   return dispatch => {
     return fetch("http://localhost:3001/", {
       method: "POST",
@@ -18,6 +19,6 @@ export const login = credentials => {
       },
       body: JSON.stringify({username: "banderKim", passsword: "password"})
       }
-    })
+    )
   }
 }
