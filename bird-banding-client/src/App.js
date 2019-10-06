@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import UserContainer from "./containers/UserContainer"
 import BirdContainer from "./containers/BirdContainer"
+import { connect } from "react-redux"
+import {getCurrentUser} from "./actions/currentUser.js"
 
 class App extends Component  {
 
-//Checking to see if connected to api
-  // componentDidMount(){
-  //   fetch("http://localhost:3000/api/v1/users/1")
-  //     .then(r=>r.json())
-  //     .then(console.log)
-  // }
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
 
 render(){
   return (
@@ -23,4 +22,4 @@ render(){
 
 }
 
-export default App;
+export default connect(null, {getCurrentUser})(App)

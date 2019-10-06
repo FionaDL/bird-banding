@@ -15,6 +15,7 @@ class Api::V1::SessionsController < ApplicationController
       render json: current_user
     else
       render json: {error: "No one is logged in."}
+    end
   end
 
   def destroy
