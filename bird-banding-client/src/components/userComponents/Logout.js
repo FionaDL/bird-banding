@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { updateLoginForm } from '../../actions/login.js'
-import { login } from '../../actions/currentUser.js'
+import { logout } from '../../actions/currentUser.js'
 
 
 const Logout = ({logout}) => {
@@ -16,4 +16,4 @@ const Logout = ({logout}) => {
 
 
 
-export default connect(null, {logout})(Login)
+export default connect(null, {logout})(Logout)

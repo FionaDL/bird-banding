@@ -3,7 +3,7 @@ export default function currentUserReducer(state = null, action)  {
     case "SET_CURRENT_USER":
       return action.user
     case "DELETE_USER":
-      return
+      return null
   default:
     return state
   }
