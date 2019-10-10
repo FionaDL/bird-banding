@@ -1,14 +1,18 @@
 import React from "react"
 import { connect } from "react-redux"
-import { updateLoginForm } from '../../actions/login.js'
 import { logout } from '../../actions/currentUser.js'
 
 
 const Logout = ({logout}) => {
 
+  const handleOnSubmit= event => {
+    event.preventDefault()
+    logout()
+  }
+
 
   return (
-    <form onSubmit={logout}>
+    <form onSubmit={handleOnSubmit}>
       <input type="submit" value="Log Out"/>
     </form>
   )

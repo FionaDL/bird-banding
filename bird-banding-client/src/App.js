@@ -15,7 +15,9 @@ class App extends Component  {
 
 render(){
   return (
-    this.props.currentUser ? <Logout/> : <Login/>
+    <div>
+      {this.props.currentUser ? <Logout/> : <Login/>}
+    </div>
   );
 }
 
