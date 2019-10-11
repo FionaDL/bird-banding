@@ -17,3 +17,9 @@
 .App-link {
   color: #61dafb;
 }
+
+#welcome {
+  background-image: url("./images/animal-avian-birds.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 30%;
+}
