@@ -3,10 +3,9 @@ import './App.css';
 import UserContainer from "./containers/UserContainer"
 import BirdContainer from "./containers/BirdContainer"
 import { connect } from "react-redux"
-import {getCurrentUser} from "./actions/currentUser.js"
-import Login from "./components/userComponents/Login.js"
-import Logout from "./components/userComponents/Logout.js"
+import { getCurrentUser } from "./actions/currentUser.js"
 import Welcome from "./components/Welcome.js"
+import Navbar from "./components/Navbar.js"
 
 class App extends Component  {
 
@@ -17,10 +16,9 @@ class App extends Component  {
 render(){
   return (
     <div>
-      <div id="welcome">
-      <Welcome />
-      </div>
-      {this.props.currentUser ? <Logout/> : <Login/>}
+      <Welcome/>
+      <Navbar/>
+    
     </div>
   );
 }
