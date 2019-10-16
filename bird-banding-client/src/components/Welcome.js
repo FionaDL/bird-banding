@@ -1,15 +1,14 @@
 import React from "react"
-import { connect } from "react-redux"
-import birdPhoto from "../images/animal-avian-birds.jpg"
 
 
 
 const Welcome = () => {
 
-
   return (
-    <div>
-      The Banding Station.
+    <div className='container'>
+      <div className='heading'>
+        <h1 id="welcome">The Banding Station</h1>
+      </div>
     </div>
   )
 }

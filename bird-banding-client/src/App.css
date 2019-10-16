@@ -18,8 +18,12 @@
   color: #61dafb;
 }
 
-#welcome {
+.navbar {
+
+}
+
+/* #welcome {
   background-image: url("./images/animal-avian-birds.jpg");
   background-repeat: no-repeat;
   background-size: 100% 30%;
-}
+} */

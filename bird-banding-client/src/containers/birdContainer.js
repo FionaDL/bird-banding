@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Welcome from "../components/Welcome.js"
+import BirdForm from '../components/birdComponents/BirdForm.js'
+
 
 
 class BirdContainer extends Component {
@@ -7,7 +8,7 @@ class BirdContainer extends Component {
   render() {
      return (
        <div>
-         <Welcome/>
+         <BirdForm/>
        </div>
      )
   }

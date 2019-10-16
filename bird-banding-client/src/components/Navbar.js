@@ -9,7 +9,8 @@ const Navbar = ({currentUser}) => {
 
 
   return (
-    <div>
+    <div className="navbar-nav ml-auto navbar-expand-lg navbar-light bg-light">
+      {currentUser ? <span className="navbar-brand mb-0 h1">Welcome {currentUser.username}</span> : ""}
       {currentUser ? <Logout/> : <Login/>}
     </div>
   )

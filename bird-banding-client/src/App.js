@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserContainer from "./containers/UserContainer"
-import BirdContainer from "./containers/BirdContainer"
+
 import { connect } from "react-redux"
 import { getCurrentUser } from "./actions/currentUser.js"
 import Welcome from "./components/Welcome.js"
 import Navbar from "./components/Navbar.js"
+import BirdContainer from "./containers/BirdContainer.js"
 
 class App extends Component  {
 
@@ -16,9 +16,9 @@ class App extends Component  {
 render(){
   return (
     <div>
-      <Welcome/>
       <Navbar/>
-    
+      <Welcome/>
+      <BirdContainer/>
     </div>
   );
 }
