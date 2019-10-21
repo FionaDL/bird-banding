@@ -11,12 +11,14 @@ import thunk  from 'redux-thunk'
 import combineReducers from './reducers/index'
 
 const reducer = combineReducers
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  reducer,
-  composeEnhancer(applyMiddleware(thunk)),
+  reducer, composeEnhancer(applyMiddleware(thunk))
 );
+
+
 
 //workaround pulled from stack overflow, because kept getting error, createStore would not take 3 argument)
 

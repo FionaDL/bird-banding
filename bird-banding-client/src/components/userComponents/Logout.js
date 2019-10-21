@@ -13,7 +13,7 @@ const Logout = ({logout}) => {
 
   return (
     <form onSubmit={handleOnSubmit} >
-      <button type="submit" className="btn btn-outline-secondary">Log Out</button>
+      <button type="submit" className="btn-outline">Log Out</button>
     </form>
   )
 }

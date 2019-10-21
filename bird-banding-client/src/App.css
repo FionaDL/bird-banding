@@ -1,10 +1,11 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,12 +19,30 @@
   color: #61dafb;
 }
 
-.navbar {
-
+.navbar-default {
+  color: #CAC6C9;
+  background-color: #364F79;
 }
 
-/* #welcome {
-  background-image: url("./images/animal-avian-birds.jpg");
+.btn-outline {
+  color: #25273B;
+  background-color: #ffffff;
+  border-color: #25273B;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.container .heading {
+  text-align: left;
+  color: #25273B;
+  background-image: url("./images/blue-yellow-bird.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 30%;
-} */
+  background-size: cover;
+  padding: 80px;
+}
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #CAC6C9;
+}

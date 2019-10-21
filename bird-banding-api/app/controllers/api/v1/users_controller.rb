@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
     render json: @users
   end
 
-  
+
   def show
     user_json = UserSerializer.new(@user).serialized_json
     render json: user_json
@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
     if @user.save
       render json: @user, status: :created, location: @user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {error: "Unable to create user."}
     end
   end
 

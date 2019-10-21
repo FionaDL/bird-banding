@@ -20,7 +20,7 @@ const BirdForm = ({birdFormData, updateBirdForm, createBird}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={birdFormData.bandNumber} name="bandNumber" onChange={handleOnChange} placeholder="Band Number"/>
+      <input type="text" value={birdFormData.band_number} name="band_number" onChange={handleOnChange} placeholder="Band Number"/>
       <input type="text" value={birdFormData.species} name="species" onChange={handleOnChange} placeholder="Species"/>
       <input type="text" value={birdFormData.sex} name="sex" onChange={handleOnChange} placeholder="Sex"/>
       <input type="text" value={birdFormData.year} name="year" onChange={handleOnChange} placeholder="Year"/>

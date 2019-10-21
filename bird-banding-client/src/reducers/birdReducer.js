@@ -1,5 +1,5 @@
 let initialState = {
-  bandNumber: "",
+  band_number: "",
   species: "",
   sex: "",
   year: "",

@@ -15,7 +15,7 @@ class Api::V1::BirdsController < ApplicationController
 
 
   def create
-    binding.pry
+  
     @bird = Bird.new(bird_params)
 
     if @bird.save
@@ -47,6 +47,6 @@ class Api::V1::BirdsController < ApplicationController
 
 
     def bird_params
-      params.require(:bird).permit(:band_numner, :species, :sex, :year, :fat, :wingspan, :weight, :user_id)
+      params.require(:credentials).permit(:band_number, :species, :sex, :year, :fat, :wingspan, :weight, :user_id)
     end
 end
