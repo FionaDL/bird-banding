@@ -15,11 +15,9 @@ class Api::V1::BirdsController < ApplicationController
 
 
   def create
-
     @bird = Bird.create(bird_params)
-    binding.pry
     if @bird.save
-      render json: @bird, status: :created, location: @bird
+      render json: @bird
     else
       render json: {error: "Bird can't be created."}
     end

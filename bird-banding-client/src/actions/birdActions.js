@@ -31,7 +31,6 @@ export const createBird = credentials => {
       })
       .then(r => r.json())
       .then(bird => {
-        console.log(bird)
         if(bird.error) {
           alert(bird.error)
         } else {

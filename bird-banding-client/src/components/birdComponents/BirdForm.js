@@ -4,7 +4,7 @@ import { updateBirdForm, createBird } from '../../actions/birdActions.js'
 
 
 
-const BirdForm = ({birdFormData, updateBirdForm, createBird}, currentUser) => {
+const BirdForm = ({birdFormData, updateBirdForm, createBird, currentUser}) => {
 
   const handleOnChange = event => {
     const {name, value} = event.target
@@ -16,7 +16,6 @@ const BirdForm = ({birdFormData, updateBirdForm, createBird}, currentUser) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(currentUser)
     birdFormData.user_id = currentUser.id
     createBird(birdFormData)
   }
@@ -30,7 +29,6 @@ const BirdForm = ({birdFormData, updateBirdForm, createBird}, currentUser) => {
       <input type="text" value={birdFormData.fat} name="fat" onChange={handleOnChange} placeholder="Fat"/>
       <input type="text" value={birdFormData.wingspan} name="wingspan" onChange={handleOnChange} placeholder="Wingspan"/>
       <input type="text" value={birdFormData.weight} name="weight" onChange={handleOnChange} placeholder="Weight"/>
-      <input type="hidden" value={currentUser.user_id} name="user_id" />
       <input type="submit" value="Add Bird"/>
     </form>
   )
