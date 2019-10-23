@@ -6,17 +6,21 @@ import Bird from './Bird.js'
 class CurrentUserBirds extends Component {
   render() {
     console.log(this.props.allBirds)
-    const birds = this.props.allBirds["birds"]
-    const birdList = birds.map(bird => {
+    const birds = this.props.allBirds
+    if (birds.length > 0) {
+      const birdList = birds.map(bird => {
       return (
       <Bird key={bird.id} bird={bird}/>
       )
     })
-    return(
-      <ul>
-        {birdList}
-      </ul>
-    );
+    return {
+      birdList
+    }}
+    else {
+    return (
+      "No birds have been added.")
+
+    }
   }
 };
 

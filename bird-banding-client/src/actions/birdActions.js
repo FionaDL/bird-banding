@@ -5,19 +5,17 @@ export const updateBirdForm = formData => {
   }
 }
 
-const addBird = formData => {
-  console.log(formData)
+const addBird = bird => {
   return {
     type: "ADD_BIRD",
-    band_number: formData.band_number,
-    species: formData.species
+    bird
   }
 }
 
-const showBirds = data => {
+const showBirds = birds => {
   return {
     type: "SHOW_BIRDS",
-    data: data
+    birds
   }
 }
 
@@ -59,7 +57,7 @@ export const getAllBirds = () => {
         if(birds.error) {
           alert(birds.error)
         } else {
-          dispatch(showBirds(birds))
+          dispatch(showBirds(birds.data))
         }
         })
       .catch(console.log())

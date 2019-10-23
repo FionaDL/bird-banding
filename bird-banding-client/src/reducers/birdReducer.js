@@ -5,7 +5,8 @@ let initialState = {
   year: "",
   fat: "",
   wingspan: "",
-  weight: ""
+  weight: "",
+  user_id: "b"
 }
 
 export default function birdFormReducer(state = initialState, action) {
