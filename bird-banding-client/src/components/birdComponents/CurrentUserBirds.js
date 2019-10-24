@@ -11,7 +11,7 @@ class CurrentUserBirds extends Component {
         <Bird key={bird.id} bird={bird}/>
     )
     return(
-      <table className="table">
+      <table className="table table-striped table-sm">
         <thead>
           <tr>
             <th scope='col'>#</th>
