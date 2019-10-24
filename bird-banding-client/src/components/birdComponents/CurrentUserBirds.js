@@ -1,21 +1,36 @@
 import React, { Component} from "react"
 import { connect } from "react-redux"
-import { getAllBirds } from '../../actions/birdActions.js'
 import Bird from './Bird.js'
 
 class CurrentUserBirds extends Component {
   render() {
-    console.log(this.props.allBirds)
     const birds = this.props.allBirds.birds
+    console.log(birds)
     if (birds.length > 0) {
-      const birdList = birds.map(bird => {
-      return (
-        <div>
-          <Bird bird={bird}/>
-      </div>
-      )
-    })
-    return {birdList}
+      const birdList = birds.map((bird) =>
+        <Bird key={bird.id} bird={bird}/>
+    )
+    return(
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope='col'>#</th>
+            <th scope="col">Band Number</th>
+            <th scope="col">Species</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Year</th>
+            <th scope="col">Fat</th>
+            <th scope="col">Wingspan</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        {birdList}
+      </tbody>
+    </table>
+
+    )
   }
     else {
     return (
@@ -26,10 +41,9 @@ class CurrentUserBirds extends Component {
 };
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     allBirds: state.allBirdsReducer
   }
 }
 
-export default connect(mapStateToProps, {getAllBirds})(CurrentUserBirds)
+export default connect(mapStateToProps)(CurrentUserBirds)
