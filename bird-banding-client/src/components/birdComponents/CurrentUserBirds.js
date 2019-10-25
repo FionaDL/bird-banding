@@ -4,10 +4,10 @@ import Bird from './Bird.js'
 
 class CurrentUserBirds extends Component {
   render() {
-    const birds = this.props.allBirds.birds
-    console.log(birds)
-    if (birds.length > 0) {
-      const birdList = birds.map((bird) =>
+    console.log(this.props)
+    const currentBirds = this.props.allBirds.filter(bird=> bird.user_id === this.props.currentUser.id)
+    if (currentBirds.length > 0) {
+      const birdList = currentBirds.map((bird) =>
         <Bird key={bird.id} bird={bird}/>
     )
     return(
@@ -35,14 +35,14 @@ class CurrentUserBirds extends Component {
     else {
     return (
       "No birds have been added.")
-
     }
   }
 };
 
 const mapStateToProps = state => {
   return {
-    allBirds: state.allBirdsReducer
+    allBirds: state.allBirdsReducer,
+    currentUser: state.currentUserReducer
   }
 }
 

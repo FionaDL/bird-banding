@@ -11,7 +11,9 @@ class Api::V1::UsersController < ApplicationController
 
   def show
     user_json = UserSerializer.new(@user).serialized_json
-    render json: user_json
+    binding.pry
+    @birds = @user.birds
+    render json: @birds
   end
 
 

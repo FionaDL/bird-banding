@@ -11,7 +11,10 @@ class App extends Component  {
 
   componentDidMount(){
     this.props.getCurrentUser()
-
+    this.props.getAllBirds()
+    if (this.props.currentUser != null) {
+      this.props.getCurrentBirds()
+    }
   }
 
 render(){
@@ -32,4 +35,4 @@ const mapStatetoProps = state => {
   }
 }
 
-export default connect(mapStatetoProps, {getCurrentUser, getAllBirds})(App)
+export default connect(mapStatetoProps, {getAllBirds, getCurrentUser})(App)
