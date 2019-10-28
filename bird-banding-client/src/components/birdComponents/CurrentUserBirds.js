@@ -3,10 +3,13 @@ import { connect } from "react-redux"
 import Bird from './Bird.js'
 
 class CurrentUserBirds extends Component {
+
+
   render() {
-    console.log(this.props)
-    const currentBirds = this.props.allBirds.filter(bird=> bird.user_id === this.props.currentUser.id)
-    if (currentBirds.length > 0) {
+     const fullBirds = this.props.allBirds
+    if (fullBirds.length > 0) {
+      const currentBirds = fullBirds.filter(bird => (bird.user_id === this.props.currentUser.id))
+      console.log(currentBirds)
       const birdList = currentBirds.map((bird) =>
         <Bird key={bird.id} bird={bird}/>
     )
@@ -14,7 +17,7 @@ class CurrentUserBirds extends Component {
       <table className="table table-striped table-sm">
         <thead>
           <tr>
-            <th scope='col'>#</th>
+            <th scope='col'>Hola</th>
             <th scope="col">Band Number</th>
             <th scope="col">Species</th>
             <th scope="col">Sex</th>

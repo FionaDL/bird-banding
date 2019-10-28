@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux"
 import { getCurrentUser } from "./actions/currentUser.js"
-import { getAllBirds } from "./actions/birdActions.js"
+import { getAllBirds, } from "./actions/birdActions.js"
 import Welcome from "./components/Welcome.js"
 import Navbar from "./components/Navbar.js"
 import BirdContainer from "./containers/BirdContainer.js"
@@ -12,9 +12,6 @@ class App extends Component  {
   componentDidMount(){
     this.props.getCurrentUser()
     this.props.getAllBirds()
-    if (this.props.currentUser != null) {
-      this.props.getCurrentBirds()
-    }
   }
 
 render(){

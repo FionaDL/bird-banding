@@ -34,7 +34,6 @@ export const createBird = credentials => {
         if(bird.error) {
           alert(bird.error)
         } else {
-
           dispatch(addBird(bird))
         }
         })
@@ -49,7 +48,7 @@ export const getAllBirds = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
-        }
+       },
       })
       .then(r => r.json())
       .then(birds => {

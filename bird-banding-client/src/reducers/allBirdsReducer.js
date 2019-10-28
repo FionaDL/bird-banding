@@ -7,9 +7,7 @@ export default function allBirdsReducer(state = {birds: []}, action) {
         }
         return { birds: state.birds.concat(bird) };
       case "SHOW_BIRDS":
-       return action.birds
-      case "SHOW_CURRENT_BIRDS":
-        return action.birds
+       return action.birds;
   default:
     return state
   }

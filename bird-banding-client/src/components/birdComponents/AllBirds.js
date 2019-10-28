@@ -2,9 +2,8 @@ import React, { Component} from "react"
 import { connect } from "react-redux"
 import Bird from './Bird.js'
 
-class CurrentUserBirds extends Component {
+class AllBirds extends Component {
   render() {
-    console.log(this.props)
     const birds = this.props.allBirds
     if (birds.length > 0) {
       const birdList = birds.map((bird) =>
@@ -46,4 +45,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(CurrentUserBirds)
+export default connect(mapStateToProps)(AllBirds)
