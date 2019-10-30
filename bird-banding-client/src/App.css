@@ -38,7 +38,8 @@
   background-image: url("./images/blue-yellow-bird.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 80px;
+  padding: 60px;
+  margin-bottom: 20px;
 }
 
 .container-full {
@@ -46,3 +47,12 @@
   width: 100%;
   background-color: #CAC6C9;
 }
+
+ .card {
+   outline: thin;
+   outline-color: #E3ED12;
+   font-family: serif;
+   color: white;
+   padding: 10px;
+   background-color: #364F79;
+ }

@@ -19,6 +19,13 @@ const showBirds = birds => {
   }
 }
 
+ const deleteBird = birdId => {
+  return {
+    type: "DELETE_BIRD",
+    birdId
+  }
+}
+
 export const createBird = credentials => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/birds", {
@@ -59,5 +66,28 @@ export const getAllBirds = () => {
         }
         })
       .catch(console.log())
+  }
+}
+
+export const removeBird = (birdId) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/birds/${birdId}`, {
+      credentials: "include",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(r => r.json())
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(deleteBird(birdId))
+
+        }
+      })
+      .catch(console.log)
+
   }
 }

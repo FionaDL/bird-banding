@@ -6,8 +6,6 @@ import Logout from "./userComponents/Logout.js"
 
 const Navbar = ({currentUser}) => {
 
-
-
   return (
     <div className="navbar-default">
       {currentUser ? <span className="navbar-brand mb-0 h1">Welcome {currentUser.username}</span> : ""}

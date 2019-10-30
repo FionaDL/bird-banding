@@ -1,6 +1,7 @@
 import React, { Component} from "react"
 import { connect } from "react-redux"
 import Bird from './Bird.js'
+import Search from './Search.js'
 
 class AllBirds extends Component {
   render() {
@@ -10,6 +11,8 @@ class AllBirds extends Component {
         <Bird key={bird.id} bird={bird}/>
     )
     return(
+      <div>
+        <Search/>
       <table className="table table-striped table-sm">
         <thead>
           <tr>
@@ -21,6 +24,7 @@ class AllBirds extends Component {
             <th scope="col">Fat</th>
             <th scope="col">Wingspan</th>
             <th scope="col">Weight</th>
+            <th scope="col">Location</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
@@ -28,6 +32,7 @@ class AllBirds extends Component {
         {birdList}
       </tbody>
     </table>
+    </div>
 
     )
   }

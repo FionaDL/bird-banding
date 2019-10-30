@@ -33,7 +33,14 @@ class Api::V1::BirdsController < ApplicationController
 
 
   def destroy
-    @bird.destroy
+    if @bird.destroy
+      render json:  { data: "Bird successfully deleted" }
+    else
+      error_resp = {
+        error: "Bird not found."
+      }
+      render json: error_resp
+    end
   end
 
   private

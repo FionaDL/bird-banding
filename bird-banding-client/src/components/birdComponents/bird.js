@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {removeBird} from '../../actions/birdActions.js'
 
 
 class Bird extends Component {
 
-  // handleClick = (event) => {
-  //   this.props.deleteRestaurant(this.props.restaurant.id)
-  // }
+  handleClick = (event) => {
+    removeBird(this.props.bird.id)
+  }
 
   render() {
     const { bird } = this.props;

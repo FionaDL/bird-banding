@@ -19,7 +19,7 @@ render(){
     <div className="container-full">
       <Navbar/>
       <Welcome/>
-      <BirdContainer/>
+      <BirdContainer currentUser={this.props.currentUser}/>
     </div>
   );
 }
