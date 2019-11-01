@@ -6,6 +6,9 @@ import { getAllBirds, } from "./actions/birdActions.js"
 import Welcome from "./components/Welcome.js"
 import Navbar from "./components/Navbar.js"
 import BirdContainer from "./containers/BirdContainer.js"
+import Login from "./components/userComponents/Login.js"
+import SignUp from "./components/userComponents/SignUp.js"
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 class App extends Component  {
 
@@ -18,7 +21,13 @@ render(){
     <div className="container-full">
       <Navbar/>
       <Welcome/>
-      <BirdContainer currentUser={this.props.currentUser}/>
+      <Router>
+        <div>
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/signUp' component={SignUp}/>
+          <BirdContainer currentUser={this.props.currentUser}/>
+        </div>
+      </Router>
     </div>
   );
 }

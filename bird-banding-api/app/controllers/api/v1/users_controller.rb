@@ -11,7 +11,7 @@ class Api::V1::UsersController < ApplicationController
 
   def show
     user_json = UserSerializer.new(@user).serialized_json
-    binding.pry
+
     @birds = @user.birds
     render json: @birds
   end
@@ -21,7 +21,8 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created, location: @user
+      session[:user_id] =@user.id
+      render json: @user, status: :created
     else
       render json: {error: "Unable to create user."}
     end
@@ -35,10 +36,6 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  def destroy
-    @user.destroy
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -48,6 +45,6 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :password_digest, :location)
+      params.require(:credentials).permit(:username, :password, :location)
     end
 end

@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { updateSignUpForm  } from '../../actions/signUp.js'
+import { updateSignUpForm, signUp } from '../../actions/signUp.js'
 
 
 
