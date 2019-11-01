@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {removeBird} from '../../actions/birdActions.js'
+import { connect } from "react-redux"
 
 
 class Bird extends Component {
 
   handleClick = (event) => {
-    removeBird(this.props.bird.id)
+    this.props.removeBird(this.props.bird.id)
   }
 
   render() {
@@ -27,4 +28,4 @@ class Bird extends Component {
   }
 };
 
-export default Bird;
+export default connect(null, {removeBird}) (Bird);

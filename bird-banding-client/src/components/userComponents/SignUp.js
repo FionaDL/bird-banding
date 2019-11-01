@@ -24,7 +24,7 @@ const SignUp = ({signUpFormData, updateSignUpForm, signUp}) => {
       <input type="text" value={signUpFormData.username} name="username" onChange={handleOnChange} placeholder="Username"/>
       <input type="text" value={signUpFormData.password} name="password" onChange={handleOnChange} placeholder="Password"/>
       <input type="text" value={signUpFormData.location} name="location" onChange={handleOnChange} placeholder="Location"/>
-        <button type="submit" className="btn-outline">Sign Up</button>
+      <button type="submit" className="btn-outline">Sign Up</button>
     </form>
   )
 }

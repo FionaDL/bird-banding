@@ -34,12 +34,12 @@ class Api::V1::BirdsController < ApplicationController
 
   def destroy
     if @bird.destroy
-      render json:  { data: "Bird successfully deleted" }
+      render json: { data: "Bird successfully destroyed", id: @bird.id }
     else
       error_resp = {
-        error: "Bird not found."
+        error: "Bird not found and not deleted"
       }
-      render json: error_resp
+      render json: error_resp, status: :unprocessable_entity
     end
   end
 

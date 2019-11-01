@@ -69,9 +69,9 @@ export const getAllBirds = () => {
   }
 }
 
-export const removeBird = (birdId) => {
+export const removeBird = birdId => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/birds/${birdId}`, {
+    return fetch(`http://localhost:3000/api/v1/birds/${birdId}`, {
       credentials: "include",
       method: "DELETE",
       headers: {
@@ -84,7 +84,6 @@ export const removeBird = (birdId) => {
           alert(resp.error)
         } else {
           dispatch(deleteBird(birdId))
-
         }
       })
       .catch(console.log)

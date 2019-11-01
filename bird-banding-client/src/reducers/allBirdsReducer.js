@@ -9,7 +9,7 @@ export default function allBirdsReducer(state = {birds: []}, action) {
       case "SHOW_BIRDS":
         return action.birds;
       case 'DELETE_BIRD':
-        return {birds: state.birds.filter(bird => bird.id !== bird.id)}
+         return state.filter(bird => bird.id === action.birdId ? false : true)
   default:
     return state
   }

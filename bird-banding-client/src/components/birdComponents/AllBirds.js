@@ -2,8 +2,13 @@ import React, { Component} from "react"
 import { connect } from "react-redux"
 import Bird from './Bird.js'
 import Search from './Search.js'
+import { getAllBirds } from '../../actions/birdActions.js'
 
 class AllBirds extends Component {
+
+  componentDidMount() {
+    this.props.getAllBirds()
+  }
   render() {
     const birds = this.props.allBirds
     if (birds.length > 0) {
@@ -50,4 +55,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(AllBirds)
+export default connect(mapStateToProps, {getAllBirds})(AllBirds)
