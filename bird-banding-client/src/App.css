@@ -22,11 +22,13 @@
 .navbar-default {
   color: #CAC6C9;
   background-color: #364F79;
+  text-align: right;
+  padding: 20px;
 }
 
 .btn-outline {
   color: #25273B;
-  background-color: #ffffff;
+  background-color: #CAC6C9;
   border-color: #25273B;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -48,10 +50,15 @@
   background-color: #CAC6C9;
 }
 
+.container {
+  padding: 30px;
+  text-align: center;
+}
+
  .card {
    outline: thin;
    outline-color: #E3ED12;
-   font-family: serif;
+   font-family: sans-serif;
    color: white;
    padding: 10px;
    background-color: #364F79;

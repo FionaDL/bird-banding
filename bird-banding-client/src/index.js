@@ -9,6 +9,7 @@ import { createStore, compose, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
 import thunk  from 'redux-thunk'
 import combineReducers from './reducers/index'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 const reducer = combineReducers
 
@@ -23,7 +24,7 @@ const store = createStore(
 //workaround pulled from stack overflow, because kept getting error, createStore would not take 3 argument)
 
 
-ReactDOM.render(<Provider store= {store} > <App /> </Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store= {store} ><Router> <App /> </Router></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

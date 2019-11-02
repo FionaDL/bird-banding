@@ -11,11 +11,17 @@ export const clearCurrentUser = () => {
   }
 }
 
+const resetLoginForm = () => {
+  return {
+    type: "RESET_LOGIN_FORM"
+  }
+}
+
 
 
 
 //asynchronous action creators
-export const login = credentials => {
+export const login = (credentials, history) => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
       credentials: "include",
@@ -31,6 +37,7 @@ export const login = credentials => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user))
+          dispatch(resetLoginForm())
         }
         })
       .catch(console.log())

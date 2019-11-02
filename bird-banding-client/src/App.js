@@ -5,10 +5,11 @@ import { getCurrentUser } from "./actions/currentUser.js"
 import { getAllBirds, } from "./actions/birdActions.js"
 import Welcome from "./components/Welcome.js"
 import Navbar from "./components/Navbar.js"
-import BirdContainer from "./containers/BirdContainer.js"
 import Login from "./components/userComponents/Login.js"
 import SignUp from "./components/userComponents/SignUp.js"
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import BirdContainer from "./containers/BirdContainer.js"
+import LandingContainer from "./containers/LandingContainer.js"
+import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom'
 
 class App extends Component  {
 
@@ -22,11 +23,11 @@ render(){
       <Navbar/>
       <Welcome/>
       <Router>
-        <div>
-          <Route exact path='/login' component={Login}/>
-          <Route exact path='/signUp' component={SignUp}/>
-          <BirdContainer currentUser={this.props.currentUser}/>
-        </div>
+          <div>
+            <Route exact path='/' render={()=> this.props.currentUser ? <BirdContainer currentUser={this.props.currentUser}/> : <LandingContainer/>}/>
+            <Route exact path='/login' component={Login}></Route>
+            <Route exact path='/signUp' component={SignUp}></Route>
+          </div>
       </Router>
     </div>
   );
@@ -40,4 +41,4 @@ const mapStatetoProps = state => {
   }
 }
 
-export default connect(mapStatetoProps, {getAllBirds, getCurrentUser})(App)
+export default withRouter(connect(mapStatetoProps, {getAllBirds, getCurrentUser})(App))
