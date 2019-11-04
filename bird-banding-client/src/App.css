@@ -19,11 +19,22 @@
   color: #61dafb;
 }
 
+hr {
+ border-color: #364F79;
+ border-style: solid none;
+ border-width: 1px 0;
+}
+
+input {
+border: 1px solid #364F79;
+ border-radius: 4px;
+}
+
 .navbar-default {
   color: #CAC6C9;
   background-color: #364F79;
   text-align: right;
-  padding: 20px;
+  padding: 10px;
 }
 
 .btn-outline {
@@ -39,20 +50,21 @@
   color: #25273B;
   background-image: url("./images/blue-yellow-bird.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  padding: 60px;
-  margin-bottom: 20px;
+  background-size: 100%;
+  padding: 80px;
+  margin: 10px;
 }
 
 .container-full {
   margin: 0 auto;
   width: 100%;
+  height: 100%;
   background-color: #CAC6C9;
 }
 
 .container {
-  padding: 30px;
-  text-align: center;
+  padding: 20px;
+  color: #364F79;
 }
 
  .card {
@@ -62,4 +74,9 @@
    color: white;
    padding: 10px;
    background-color: #364F79;
+ }
+
+ .line {
+   outline: 5px;
+    outline-color: #E3ED12;
  }

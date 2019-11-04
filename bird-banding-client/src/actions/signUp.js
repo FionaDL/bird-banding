@@ -12,7 +12,7 @@ export const resetSignUpForm = () => {
 }
 
 
-export const signUp = credentials => {
+export const signUp = (credentials, history) => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/signUp", {
       credentials: "include",
@@ -29,6 +29,7 @@ export const signUp = credentials => {
         } else {
           dispatch(setCurrentUser(user))
           dispatch(resetSignUpForm())
+          history.push('/')
         }
         })
       .catch(console.log())

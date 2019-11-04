@@ -38,6 +38,7 @@ export const login = (credentials, history) => {
         } else {
           dispatch(setCurrentUser(user))
           dispatch(resetLoginForm())
+          history.push('/')
         }
         })
       .catch(console.log())

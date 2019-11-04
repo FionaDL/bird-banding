@@ -22,13 +22,12 @@ render(){
     <div className="container-full">
       <Navbar/>
       <Welcome/>
-      <Router>
+      <hr></hr>
           <div>
             <Route exact path='/' render={()=> this.props.currentUser ? <BirdContainer currentUser={this.props.currentUser}/> : <LandingContainer/>}/>
             <Route exact path='/login' component={Login}></Route>
             <Route exact path='/signUp' component={SignUp}></Route>
           </div>
-      </Router>
     </div>
   );
 }

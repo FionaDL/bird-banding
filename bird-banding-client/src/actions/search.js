@@ -1,6 +1,6 @@
 export const callSearch = species => {
   return {
-    type: "Call_Search",
+    type: "CALL_SEARCH",
     species
   }
 }

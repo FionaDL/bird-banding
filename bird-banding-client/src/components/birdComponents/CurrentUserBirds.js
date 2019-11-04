@@ -17,7 +17,7 @@ class CurrentUserBirds extends Component {
       <table className="table table-striped table-sm">
         <thead>
           <tr>
-            <th scope='col'>Hola</th>
+            <th scope='col'>#</th>
             <th scope="col">Band Number</th>
             <th scope="col">Species</th>
             <th scope="col">Sex</th>

@@ -9,6 +9,8 @@ class AllBirds extends Component {
   componentDidMount() {
     this.props.getAllBirds()
   }
+
+
   render() {
     const birds = this.props.allBirds
     if (birds.length > 0) {
@@ -29,7 +31,6 @@ class AllBirds extends Component {
             <th scope="col">Fat</th>
             <th scope="col">Wingspan</th>
             <th scope="col">Weight</th>
-            <th scope="col">Location</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
