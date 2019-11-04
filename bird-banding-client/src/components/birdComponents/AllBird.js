@@ -23,7 +23,6 @@ class AllBird extends Component {
             <td>{bird.attributes.wingspan}</td>
             <td>{bird.attributes.weight}</td>
             <td>{bird.attributes.user.location}</td>
-            <td><button onClick={this.handleClick}> Delete </button></td>
           </tr>
 
     );
