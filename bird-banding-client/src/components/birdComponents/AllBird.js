@@ -10,18 +10,19 @@ class AllBird extends Component {
   }
 
   render() {
+    console.log(this.props)
     const { bird } = this.props;
     return (
           <tr>
             <th scope="row">{bird.id}</th>
-            <td>{bird.band_number}</td>
-            <td>{bird.species}</td>
-            <td>{bird.sex}</td>
-            <td>{bird.year}</td>
-            <td>{bird.fat}</td>
-            <td>{bird.wingspan}</td>
-            <td>{bird.weight}</td>
-            <td>{bird.location}</td>
+            <td>{bird.attributes.band_number}</td>
+            <td>{bird.attributes.species}</td>
+            <td>{bird.attributes.ex}</td>
+            <td>{bird.attributes.year}</td>
+            <td>{bird.attributes.fat}</td>
+            <td>{bird.attributes.wingspan}</td>
+            <td>{bird.attributes.weight}</td>
+            <td>{bird.attributes.user.location}</td>
             <td><button onClick={this.handleClick}> Delete </button></td>
           </tr>
 

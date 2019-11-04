@@ -18,8 +18,6 @@ class AllBirds extends Component {
         <AllBird key={bird.id} bird={bird}/>
     )
     return(
-      <div>
-        <Search/>
       <table className="table table-striped table-sm">
         <thead>
           <tr>
@@ -39,7 +37,6 @@ class AllBirds extends Component {
         {birdList}
       </tbody>
     </table>
-    </div>
 
     )
   }

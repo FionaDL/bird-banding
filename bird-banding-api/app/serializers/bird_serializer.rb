@@ -1,5 +1,7 @@
 class BirdSerializer
   include FastJsonapi::ObjectSerializer
+  
   belongs_to :user
-  attributes :band_number, :species, :sex, :year, :fat, :wingspan, :weight, :user_id
+  attributes :band_number, :species, :sex, :year, :fat, :wingspan, :weight, :user_id, :user
+
 end

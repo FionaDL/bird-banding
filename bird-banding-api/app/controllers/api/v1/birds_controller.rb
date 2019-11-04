@@ -1,10 +1,10 @@
 class Api::V1::BirdsController < ApplicationController
-  before_action :set_bird, only: [:show, :update, :destroy]
+  before_action :set_bird, only: [:show, :destroy]
 
 
   def index
     @birds = Bird.all
-    render json: @birds
+    render json: BirdSerializer.new(@birds)
   end
 
 
@@ -15,22 +15,13 @@ class Api::V1::BirdsController < ApplicationController
 
   def create
     @bird = Bird.create(bird_params)
-    binding.pry
     if @bird.save
-      render json: @bird
+      render json: BirdSerializer.new(@bird).serialized_json
     else
       render json: {error: "Bird can't be created."}
     end
   end
 
-
-  def update
-    if @bird.update(bird_params)
-      render json: @bird
-    else
-      render json: @bird.errors, status: :unprocessable_entity
-    end
-  end
 
 
   def destroy

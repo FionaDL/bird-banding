@@ -21,13 +21,13 @@ const SignUp = ({signUpFormData, updateSignUpForm, signUp, history}) => {
 
   return (
     <form onSubmit={handleSubmit} className="container">
-      <div class="form-group">
+      <div className="form-group">
       <input type="text" value={signUpFormData.username} name="username" onChange={handleOnChange} placeholder="Username"/>
       </div>
-       <div class="form-group">
+       <div className="form-group">
       <input type="text" value={signUpFormData.password} name="password" onChange={handleOnChange} placeholder="Password"/>
       </div>
-      <div class="form-group">
+      <div className="form-group">
       <input type="text" value={signUpFormData.location} name="location" onChange={handleOnChange} placeholder="Location"/>
       </div>
       <button type="submit" className="btn-outline">Sign Up</button>
