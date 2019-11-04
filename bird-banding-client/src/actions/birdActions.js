@@ -63,6 +63,7 @@ export const getAllBirds = () => {
         if(birds.error) {
           alert(birds.error)
         } else {
+          console.log(birds)
           dispatch(showBirds(birds))
         }
         })

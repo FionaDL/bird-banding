@@ -11,12 +11,13 @@ class BirdContainer extends Component {
        <div className="container">
          <div className="row">
            <div className="col">
-             <h5>Banding Station - {this.props.currentUser.location}</h5>
+             <h4>Banding Station - {this.props.currentUser.location}</h4>
+             <h5>Add a bird:</h5>
              <BirdForm/>
              <CurrentUserBirds/>
            </div>
            <div className="col">
-             <h5>Banding Stations Everywhere</h5>
+             <h4>Banding Stations Everywhere</h4>
              <AllBirds/>
            </div>
         </div>

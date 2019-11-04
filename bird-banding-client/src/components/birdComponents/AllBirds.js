@@ -1,6 +1,6 @@
 import React, { Component} from "react"
 import { connect } from "react-redux"
-import Bird from './Bird.js'
+import AllBird from './AllBird.js'
 import Search from './Search.js'
 import { getAllBirds } from '../../actions/birdActions.js'
 
@@ -15,7 +15,7 @@ class AllBirds extends Component {
     const birds = this.props.allBirds
     if (birds.length > 0) {
       const birdList = birds.map((bird) =>
-        <Bird key={bird.id} bird={bird}/>
+        <AllBird key={bird.id} bird={bird}/>
     )
     return(
       <div>
@@ -31,6 +31,7 @@ class AllBirds extends Component {
             <th scope="col">Fat</th>
             <th scope="col">Wingspan</th>
             <th scope="col">Weight</th>
+            <th scope="col">Location</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>

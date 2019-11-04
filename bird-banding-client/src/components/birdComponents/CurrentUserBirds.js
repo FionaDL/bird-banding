@@ -1,6 +1,6 @@
 import React, { Component} from "react"
 import { connect } from "react-redux"
-import Bird from './Bird.js'
+import CurrentBird from './CurrentBird.js'
 
 class CurrentUserBirds extends Component {
 
@@ -11,7 +11,7 @@ class CurrentUserBirds extends Component {
       const currentBirds = fullBirds.filter(bird => (bird.user_id === this.props.currentUser.id))
       console.log(currentBirds)
       const birdList = currentBirds.map((bird) =>
-        <Bird key={bird.id} bird={bird}/>
+        <CurrentBird key={bird.id} bird={bird}/>
     )
     return(
       <table className="table table-striped table-sm">

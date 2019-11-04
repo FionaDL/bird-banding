@@ -15,6 +15,7 @@ class Api::V1::BirdsController < ApplicationController
 
   def create
     @bird = Bird.create(bird_params)
+    binding.pry
     if @bird.save
       render json: @bird
     else

@@ -3,7 +3,7 @@ import {removeBird} from '../../actions/birdActions.js'
 import { connect } from "react-redux"
 
 
-class Bird extends Component {
+class AllBird extends Component {
 
   handleClick = (event) => {
     this.props.removeBird(this.props.bird.id)
@@ -21,6 +21,7 @@ class Bird extends Component {
             <td>{bird.fat}</td>
             <td>{bird.wingspan}</td>
             <td>{bird.weight}</td>
+            <td>{bird.location}</td>
             <td><button onClick={this.handleClick}> Delete </button></td>
           </tr>
 
@@ -28,4 +29,4 @@ class Bird extends Component {
   }
 };
 
-export default connect(null, {removeBird}) (Bird);
+export default connect(null, {removeBird}) (AllBird);
