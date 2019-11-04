@@ -4,12 +4,10 @@ import CurrentBird from './CurrentBird.js'
 
 class CurrentUserBirds extends Component {
 
-
   render() {
      const fullBirds = this.props.allBirds
     if (fullBirds.length > 0) {
       const currentBirds = fullBirds.filter(bird => (bird.attributes.user_id === this.props.currentUser.id))
-      console.log(currentBirds)
       const birdList = currentBirds.map((bird) =>
         <CurrentBird key={bird.id} bird={bird}/>
     )

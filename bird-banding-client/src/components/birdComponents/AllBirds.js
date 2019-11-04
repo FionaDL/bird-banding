@@ -1,7 +1,6 @@
 import React, { Component} from "react"
 import { connect } from "react-redux"
 import AllBird from './AllBird.js'
-import Search from './Search.js'
 import { getAllBirds } from '../../actions/birdActions.js'
 
 class AllBirds extends Component {
@@ -42,7 +41,6 @@ class AllBirds extends Component {
     else {
     return (
       "No birds have been added.")
-
     }
   }
 };

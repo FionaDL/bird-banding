@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { updateBirdForm, createBird } from '../../actions/birdActions.js'
 
 
-
 const BirdForm = ({birdFormData, updateBirdForm, createBird, currentUser}) => {
 
   const handleOnChange = event => {

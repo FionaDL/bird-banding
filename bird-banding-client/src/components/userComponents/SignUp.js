@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { updateSignUpForm, signUp } from '../../actions/signUp.js'
 
 
-
 const SignUp = ({signUpFormData, updateSignUpForm, signUp, history}) => {
 
   const handleOnChange = event => {

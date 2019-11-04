@@ -9,7 +9,7 @@ import Login from "./components/userComponents/Login.js"
 import SignUp from "./components/userComponents/SignUp.js"
 import BirdContainer from "./containers/BirdContainer.js"
 import LandingContainer from "./containers/LandingContainer.js"
-import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom'
+import { Route, withRouter} from 'react-router-dom'
 
 class App extends Component  {
 

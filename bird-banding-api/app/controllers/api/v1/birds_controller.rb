@@ -43,6 +43,6 @@ class Api::V1::BirdsController < ApplicationController
 
 
     def bird_params
-      params.require(:credentials).permit(:band_number, :species, :sex, :year, :fat, :wingspan, :weight, :user_id)
+      params.require(:credentials).permit(:band_number, :species, :sex, :year, :fat, :wingspan, :weight, :user_id, :user)
     end
 end

@@ -5,6 +5,12 @@ export const updateBirdForm = formData => {
   }
 }
 
+export const resetBirdForm = () => {
+  return {
+    type: "RESET_BIRD_FORM"
+  }
+}
+
 const addBird = bird => {
   return {
     type: "ADD_BIRD",
@@ -42,7 +48,8 @@ export const createBird = credentials => {
         if(bird.error) {
           alert(bird.error)
         } else {
-          dispatch(addBird(bird))
+          dispatch(addBird(bird.data))
+          dispatch(resetBirdForm())
         }
         })
       .catch(console.log())
@@ -63,7 +70,6 @@ export const getAllBirds = () => {
         if(birds.error) {
           alert(birds.error)
         } else {
-          console.log(birds.data)
           dispatch(showBirds(birds.data))
         }
         })
