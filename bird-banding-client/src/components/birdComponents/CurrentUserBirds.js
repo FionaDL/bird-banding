@@ -8,7 +8,7 @@ class CurrentUserBirds extends Component {
      const fullBirds = this.props.allBirds
     if (fullBirds.length > 0) {
       const currentBirds = fullBirds.filter(bird => (bird.attributes.user_id === this.props.currentUser.id))
-      const birdList = currentBirds.map((bird) =>
+       const birdList = currentBirds.map((bird) =>
         <CurrentBird key={bird.id} bird={bird}/>
     )
     return(
