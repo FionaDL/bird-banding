@@ -7,6 +7,7 @@ import Welcome from "./components/Welcome.js"
 import Navbar from "./components/Navbar.js"
 import Login from "./components/userComponents/Login.js"
 import SignUp from "./components/userComponents/SignUp.js"
+import BandSearch from "./components/birdComponents/BandSearch.js"
 import BirdContainer from "./containers/BirdContainer.js"
 import LandingContainer from "./containers/LandingContainer.js"
 import { Route, withRouter} from 'react-router-dom'
@@ -27,6 +28,7 @@ render(){
             <Route exact path='/' render={()=> this.props.currentUser ? <BirdContainer currentUser={this.props.currentUser}/> : <LandingContainer/>}/>
             <Route exact path='/login' component={Login}></Route>
             <Route exact path='/signUp' component={SignUp}></Route>
+            <Route exact path='/bandSearch' component={BandSearch}></Route>
           </div>
     </div>
   );

@@ -12,6 +12,7 @@ const LandingContainer = () => {
         <div className="card">
           <Link to="/signUp" className="btn btn-outline">Sign Up</Link>
           <Link to="/login" className="btn btn-outline">Log In</Link>
+          <Link to="/bandsearch" className="btn btn-outline">Enter a Band Number</Link>
         </div>
     </div>
   )
