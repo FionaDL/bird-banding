@@ -5,6 +5,8 @@ export const bandSearch = number => {
   }
 }
 
-export const resetBandForm =() => {
+export const resetBandForm = () => {
+  return {
   type:"RESET_BIRD_FORM"
+}
 }
