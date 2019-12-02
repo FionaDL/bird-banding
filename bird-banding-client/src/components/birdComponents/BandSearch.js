@@ -28,7 +28,8 @@ class BandSearch extends Component {
    const bird = allBirds.find((bird) => {
      return bird.attributes.band_number
    })
-   return bird ? this.setState({foundBird: bird, isSubmitted: true}) : "Band"
+   console.log(bird)
+    return bird ? this.setState({foundBird: bird, isSubmitted: true}) : "Band"
     this.props.resetBandForm()
  }
 
