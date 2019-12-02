@@ -32,7 +32,8 @@ class BandSearch extends Component {
      return bird.attributes.band_number == bandNumber
    })
     if (bird) {
-     this.setState({foundBird: {band_number: bird.attributes.band_number,
+      const foundBird = {...this.state.foundBird}
+        foundBird.band
        // const { user } = { ...this.state };
        //   const currentState = user;
        //   const { name, value } = e.target;
