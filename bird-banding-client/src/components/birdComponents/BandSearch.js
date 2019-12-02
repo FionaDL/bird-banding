@@ -27,15 +27,17 @@ class BandSearch extends Component {
    event.preventDefault()
    const allBirds = this.props.birds
    const bandNumber = this.state.band
-   console.log(allBirds, bandNumber)
    const bird = allBirds.find(function(bird) {
      console.log(bird.attributes.band_number)
      return bird.attributes.band_number == bandNumber
    })
-   console.log(bird)
     if (bird) {
-     this.setState({foundBird: bird, isSubmitted: true})
+     this.setState({foundBird: bird.attributes.band_number, isSubmitted: true})
    }
+   else {
+     alert("This band number was not found in the database")
+   }
+   console.log(this.state.foundBird)
     this.props.resetBandForm()
  }
 
@@ -47,6 +49,7 @@ class BandSearch extends Component {
        <input type="submit" value="Search"/>
      </form>
       {this.state.isSubmitted && <Results bird={this.state.foundBird}/>}
+
    </div>
    )
  }
