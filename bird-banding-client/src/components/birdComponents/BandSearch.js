@@ -3,6 +3,7 @@ import {connect} from "react-redux"
 import {bandSearch, resetBandForm} from "../../actions/search.js"
 import {getAllBirds} from "../../actions/birdActions"
 import Results from "./Results.js"
+import NoBird from "./NoBird.js"
 
 
 class BandSearch extends Component {
@@ -25,11 +26,14 @@ class BandSearch extends Component {
   handleSubmit = (event) => {
    event.preventDefault()
    const allBirds = this.props.birds
-   const bird = allBirds.find((bird) => {
-     return bird.attributes.band_number
+   const bandNumber = this.state.band
+   const bird = allBirds.find(function(bird) {
+     return bird.attributes.band_number === bandNumber
    })
    console.log(bird)
-    return bird ? this.setState({foundBird: bird, isSubmitted: true}) : "Band"
+    if (bird) {
+     this.setState({foundBird: bird, isSubmitted: true})
+   }
     this.props.resetBandForm()
  }
 
