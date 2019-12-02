@@ -9,7 +9,7 @@ import NoBird from "./NoBird.js"
 class BandSearch extends Component {
   state = {
     band: " ",
-    foundBird: " ",
+    foundBird: {},
     isSubmitted: false
   }
 
@@ -32,7 +32,14 @@ class BandSearch extends Component {
      return bird.attributes.band_number == bandNumber
    })
     if (bird) {
-     this.setState({foundBird: bird.attributes.band_number, isSubmitted: true})
+     this.setState({foundBird: {band_number: bird.attributes.band_number,
+       // const { user } = { ...this.state };
+       //   const currentState = user;
+       //   const { name, value } = e.target;
+       //   currentState[name] = value;
+       //
+       //   this.setState({ user: currentState });
+       isSubmitted: true})
    }
    else {
      alert("This band number was not found in the database")
