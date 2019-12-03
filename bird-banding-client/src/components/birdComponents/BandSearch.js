@@ -7,9 +7,14 @@ import NoBird from "./NoBird.js"
 
 
 class BandSearch extends Component {
-  state = {
-    band: " ",
-    foundBird: {},
+  state = { band: " ",
+    foundBird: {band_number: "",
+    species: "",
+    sex: "",
+    year: "",
+    fat: "",
+    wingspan: "",
+    weight: ""},
     isSubmitted: false
   }
 
@@ -28,19 +33,19 @@ class BandSearch extends Component {
    const allBirds = this.props.birds
    const bandNumber = this.state.band
    const bird = allBirds.find(function(bird) {
-     console.log(bird.attributes.band_number)
      return bird.attributes.band_number == bandNumber
    })
     if (bird) {
-      const foundBird = {...this.state.foundBird}
-        foundBird.band
-       // const { user } = { ...this.state };
-       //   const currentState = user;
-       //   const { name, value } = e.target;
-       //   currentState[name] = value;
-       //
-       //   this.setState({ user: currentState });
-       isSubmitted: true})
+      const thisBird = bird.attributes
+      console.log(thisBird.species)
+      this.setState({foundBird: {...this.state.foundBird, band_number: thisBird.band_number,
+        species: thisBird.species,
+        sex: thisBird.sex,
+        year: thisBird.year,
+        fat: thisBird.fat,
+        wingspan: thisBird.wingspan,
+        weight: thisBird.weight },
+        isSubmitted: true})
    }
    else {
      alert("This band number was not found in the database")
