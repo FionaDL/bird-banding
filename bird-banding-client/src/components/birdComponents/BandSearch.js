@@ -8,8 +8,7 @@ import NoBird from "./NoBird.js"
 
 class BandSearch extends Component {
   state = { band: " ",
-    foundBird: {band_number: "",
-    species: "",
+    foundBird: {band_number: "", species: "",
     sex: "",
     year: "",
     fat: "",
@@ -37,7 +36,6 @@ class BandSearch extends Component {
    })
     if (bird) {
       const thisBird = bird.attributes
-      console.log(thisBird.species)
       this.setState({foundBird: {...this.state.foundBird, band_number: thisBird.band_number,
         species: thisBird.species,
         sex: thisBird.sex,
