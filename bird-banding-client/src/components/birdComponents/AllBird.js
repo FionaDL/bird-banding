@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from "react-redux"
 
 
 class AllBird extends Component {

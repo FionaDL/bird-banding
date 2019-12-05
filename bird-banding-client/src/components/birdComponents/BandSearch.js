@@ -8,12 +8,6 @@ import NoBird from "./NoBird.js"
 
 class BandSearch extends Component {
   state = { band: " ",
-    foundBird: {band_number: "", species: "",
-    sex: "",
-    year: "",
-    fat: "",
-    wingspan: "",
-    weight: ""},
     isSubmitted: false
   }
 
@@ -35,20 +29,15 @@ class BandSearch extends Component {
      return bird.attributes.band_number == bandNumber
    })
     if (bird) {
-      const thisBird = bird.attributes
-      this.setState({foundBird: {...this.state.foundBird, band_number: thisBird.band_number,
-        species: thisBird.species,
-        sex: thisBird.sex,
-        year: thisBird.year,
-        fat: thisBird.fat,
-        wingspan: thisBird.wingspan,
-        weight: thisBird.weight },
-        isSubmitted: true})
-   }
+      const {name, value} = bird.attributes
+        console.log({name, value})
+        const thisBird = {
+          ...this.props.foundBird, [name] :value
+        }
+      }
    else {
      alert("This band number was not found in the database")
    }
-   console.log(this.state.foundBird)
     this.props.resetBandForm()
  }
 
@@ -59,7 +48,7 @@ class BandSearch extends Component {
        <input placeholder="Enter band number..." onChange={this.handleChange} value={this.state.band}/>
        <input type="submit" value="Search"/>
      </form>
-      {this.state.isSubmitted && <Results bird={this.state.foundBird}/>}
+      {this.state.isSubmitted && <Results bird={this.props.foundBird}/>}
 
    </div>
    )
@@ -68,7 +57,8 @@ class BandSearch extends Component {
 
 const mapStateToProps = state => {
   return {
-    birds: state.allBirdsReducer
+    birds: state.allBirdsReducer,
+    foundBird: state.foundBirdReducer
   }
 }
 
